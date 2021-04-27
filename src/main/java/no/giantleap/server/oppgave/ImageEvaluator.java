@@ -24,7 +24,7 @@ class ImageEvaluator {
         for (int y = 0; y < dim.height; y++) {
             boolean lineHasStarted = false;
             for (int x = 0; x < dim.width; x++) {
-                if (rawPixels.get(toOffset(x, y, dim.width))) {
+                if (!rawPixels.get(toOffset(x, y, dim.width))) {
                     if (lineHasStarted) {
                         hScore++;
                     } else {
@@ -41,7 +41,7 @@ class ImageEvaluator {
         for (int x = 0; x < dim.width; x++) {
             boolean lineHasStarted = false;
             for (int y = 0; y < dim.height; y++) {
-                if (rawPixels.get(toOffset(x, y, dim.width))) {
+                if (!rawPixels.get(toOffset(x, y, dim.width))) {
                     if (lineHasStarted) {
                         vScore++;
                     } else {
